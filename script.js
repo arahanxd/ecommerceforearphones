@@ -56,6 +56,13 @@ const products = [
         price: 15999,
         image: "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=500&h=500&fit=crop"
     }
+    // {
+    // id: 9,
+    // name: "1-Year Extended Warranty",
+    // description: "Extra 1 year warranty for your earphones",
+    // price: 999,
+    // image: "https://via.placeholder.com/500x500/22c55e/ffffff?text=Extended+Warranty"
+    // }
 ];
 
 // Initialize Storage
@@ -345,6 +352,22 @@ function updateCartSummary() {
     if (totalEl) totalEl.textContent = `₹${total.toLocaleString('en-IN')}`;
 }
 
+// 6. function updateCartSummary() {
+//     const subtotal = getCartTotal();
+//     const shipping = subtotal > 0 ? 100 : 0;
+
+//     let discount = 0;
+//     if (subtotal > 1000) {
+//         discount = subtotal * 0.10; // 10% discount
+//     }
+
+//     const total = subtotal + shipping - discount;
+
+//     document.getElementById('subtotal').textContent = `₹${subtotal.toLocaleString('en-IN')}`;
+//     document.getElementById('shipping').textContent = `₹${shipping}`;
+//     document.getElementById('total').textContent = `₹${total.toLocaleString('en-IN')}`;
+// }
+
 // Display Wishlist
 function displayWishlist() {
     const wishlistItems = document.getElementById('wishlist-items');
@@ -519,6 +542,70 @@ function handleCheckout() {
     updateCartCount();
     displayCart();
 }
+
+function saveFeedback() {
+    const email = document.getElementById("email").value;
+    const mobile = document.getElementById("mobile").value;
+    const message = document.getElementById("message").value;
+
+    let feedbacks = JSON.parse(localStorage.getItem("feedbacks")) || [];
+
+    feedbacks.push({ email, mobile, message });
+
+    localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
+
+    document.getElementById("thankYouMsg").innerText =
+        "Feedback saved successfully!";
+}
+
+// 3. function validateFeedbackForm() {
+//     const email = document.getElementById("email").value;
+//     const mobile = document.getElementById("mobile").value;
+
+//     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//     const mobilePattern = /^[6-9]\d{9}$/;
+
+//     if (!emailPattern.test(email)) {
+//         alert("Please enter a valid email address");
+//         return false;
+//     }
+
+//     if (!mobilePattern.test(mobile)) {
+//         alert("Please enter a valid 10-digit mobile number");
+//         return false;
+//     }
+
+//     return true;
+// }
+
+// 4. function clearForm() {
+//     document.querySelector("form").reset();
+//     document.getElementById("thankYouMsg").innerText =
+//         "Thank you! Your form has been cleared.";
+// }
+
+// 5. function toggleOffers() {
+//     const section = document.getElementById("offersSection");
+//     section.style.display =
+//         section.style.display === "none" ? "block" : "none";
+// }
+
+// 7. function saveFeedback() {
+//     if (!validateFeedbackForm()) return;
+
+//     const feedback = {
+//         email: document.getElementById("email").value,
+//         mobile: document.getElementById("mobile").value,
+//         message: document.getElementById("message").value
+//     };
+
+//     let feedbacks = JSON.parse(localStorage.getItem("feedbacks")) || [];
+//     feedbacks.push(feedback);
+//     localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
+
+//     document.getElementById("thankYouMsg").innerText =
+//         "Feedback saved successfully!";
+// }
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {

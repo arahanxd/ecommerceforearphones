@@ -22,9 +22,11 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family: 'Poppins', 'Segoe UI', sans-serif; */
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--bg-light);
+    /* background-color: #f1f5f9; */
 }
 
 .container {
@@ -196,6 +198,7 @@ body {
 }
 
 .product-card {
+    /* border: 2px solid #e0e7ff; */
     background: var(--bg-white);
     border-radius: 15px;
     overflow: hidden;
