@@ -55,14 +55,7 @@ const products = [
         description: "Advanced noise cancellation technology",
         price: 15999,
         image: "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=500&h=500&fit=crop"
-    }
-    // {
-    // id: 9,
-    // name: "1-Year Extended Warranty",
-    // description: "Extra 1 year warranty for your earphones",
-    // price: 999,
-    // image: "https://via.placeholder.com/500x500/22c55e/ffffff?text=Extended+Warranty"
-    // }
+    },
 ];
 
 // Initialize Storage
@@ -558,54 +551,12 @@ function saveFeedback() {
         "Feedback saved successfully!";
 }
 
-// 3. function validateFeedbackForm() {
-//     const email = document.getElementById("email").value;
-//     const mobile = document.getElementById("mobile").value;
-
-//     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//     const mobilePattern = /^[6-9]\d{9}$/;
-
-//     if (!emailPattern.test(email)) {
-//         alert("Please enter a valid email address");
-//         return false;
-//     }
-
-//     if (!mobilePattern.test(mobile)) {
-//         alert("Please enter a valid 10-digit mobile number");
-//         return false;
-//     }
-
-//     return true;
-// }
-
-// 4. function clearForm() {
-//     document.querySelector("form").reset();
-//     document.getElementById("thankYouMsg").innerText =
-//         "Thank you! Your form has been cleared.";
-// }
-
-// 5. function toggleOffers() {
-//     const section = document.getElementById("offersSection");
-//     section.style.display =
-//         section.style.display === "none" ? "block" : "none";
-// }
-
-// 7. function saveFeedback() {
-//     if (!validateFeedbackForm()) return;
-
-//     const feedback = {
-//         email: document.getElementById("email").value,
-//         mobile: document.getElementById("mobile").value,
-//         message: document.getElementById("message").value
-//     };
-
-//     let feedbacks = JSON.parse(localStorage.getItem("feedbacks")) || [];
-//     feedbacks.push(feedback);
-//     localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
-
-//     document.getElementById("thankYouMsg").innerText =
-//         "Feedback saved successfully!";
-// }
+function toggleOffers()
+{
+    const section = document.getElementById("offersSection");
+    section.style.display =
+        section.style.display === "none" ? "block" : "none";
+}
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
